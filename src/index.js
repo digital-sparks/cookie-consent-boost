@@ -7,7 +7,6 @@ window.Webflow.push(() => {
   let loadFsCC = setInterval(function () {
     if ('FsCC' in window) {
       clearInterval(loadFsCC);
-
       window.FsCC.push(() => {
         updateConsent();
       });
@@ -16,6 +15,12 @@ window.Webflow.push(() => {
       });
     }
   }, 5);
+
+  document.querySelectorAll('[fs-cc=open-banner]').forEach((button) => {
+    button.addEventListener('click', () => {
+      FsCC.banner.open();
+    });
+  });
 
   function updateConsent() {
     const consentMode = {
