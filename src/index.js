@@ -24,7 +24,7 @@ window.Webflow.push(() => {
 
   function updateConsent() {
     const consentMode = {
-      ad_personalization: window.FsCC.store.consents.personalization ? 'granted' : 'denied',
+      ad_personalization: window.FsCC.store.consents.marketing ? 'granted' : 'denied',
       ad_storage: window.FsCC.store.consents.marketing ? 'granted' : 'denied',
       ad_user_data: window.FsCC.store.consents.marketing ? 'granted' : 'denied',
       analytics_storage: window.FsCC.store.consents.analytics ? 'granted' : 'denied',
